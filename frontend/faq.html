@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+      <title>FAQ - SmartCity</title>
+   </head>
+   <body>
+      <video autoplay muted loop class="bg-video">
+         <source src="video.mp4" type="video/mp4">
+      </video>
+      <!-- <div class="bg-overlay"></div> -->
+      <div class="layout">
+         <div class="sidebar">
+            <div class="s-logo">
+               <div class="s-logo-icon">🏛️</div>
+               <div class="s-logo-text">Smart<span>City</span></div>
+            </div>
+            <div class="s-section">Public</div>
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span>Home</a>
+            <a href="login.html" class="nav-item"><span class="nav-icon">🔑</span>Login</a>
+            <a href="register.html" class="nav-item"><span class="nav-icon">📝</span>Register</a>
+            <a href="file-complaint.html" class="nav-item"><span class="nav-icon">📋</span>File Complaint</a>
+            <a href="track-complaint.html" class="nav-item"><span class="nav-icon">📍</span>Track Complaint</a>
+            <a href="faq.html" class="nav-item active"><span class="nav-icon">❓</span>FAQ &amp; Help</a>
+            <a href="announcements.html" class="nav-item"><span class="nav-icon">📢</span>Announcements</a>
+            <div class="s-section">Citizen</div>
+            <a href="my-complaints.html" class="nav-item"><span class="nav-icon">📋</span>My Complaints</a>
+            <div class="s-section">Officer</div>
+            <a href="officer-complaints.html" class="nav-item"><span class="nav-icon">👷</span>Assigned Complaints</a>
+            <a href="sla-tracker.html" class="nav-item"><span class="nav-icon">⏱️</span>SLA Tracker</a>
+            <div class="s-section">Admin</div>
+            <a href="admin-dashboard.html" class="nav-item"><span class="nav-icon">📊</span>Admin Dashboard</a>
+            <a href="user-management.html" class="nav-item"><span class="nav-icon">👥</span>User Management</a>
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙️</span>Settings</a>
+            <div class="s-footer">
+               <div class="user-pill">
+                  <div class="user-av" id="sidebarAvatar">?</div>
+                  <div>
+                     <div class="user-nm" id="sidebarName">Guest</div>
+                     <div class="user-rl" id="sidebarRole">Not logged in</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="main-content">
+            <div class="topbar">
+               <div class="topbar-title">❓ FAQ &amp; Help</div>
+               <div class="topbar-right">Ajmer Municipal Corporation</div>
+            </div>
+            <div class="page-content">
+               <div class="page-heading">❓ FAQ &amp; Help Center</div>
+               <div class="page-sub">Find answers to common questions.</div>
+               <div class="card" style="max-width:660px">
+                  <div class="faq-item" onclick="this.classList.toggle('open')">
+                     <div class="faq-q">How do I file a complaint? <span class="faq-icon">▼</span></div>
+                     <div class="faq-a">Click "File Complaint", fill in your details, describe the problem, upload a photo if possible, and submit. You will receive a unique Complaint ID instantly.</div>
+                  </div>
+                  <div class="faq-item" onclick="this.classList.toggle('open')">
+                     <div class="faq-q">How long does resolution take? <span class="faq-icon">▼</span></div>
+                     <div class="faq-a">Roads — 7 days. Water Supply — 3 days. Electricity — 2 days. Sanitation — 4 days. Parks — 5 days. If not resolved in time, it is automatically escalated.</div>
+                  </div>
+                  <div class="faq-item" onclick="this.classList.toggle('open')">
+                     <div class="faq-q">What is a Complaint ID? <span class="faq-icon">▼</span></div>
+                     <div class="faq-a">A unique number assigned to every complaint (e.g. 1, 2, 3...). Use it on the Track Complaint page to see status and full timeline — no login required to track.</div>
+                  </div>
+                  <div class="faq-item" onclick="this.classList.toggle('open')">
+                     <div class="faq-q">What if my complaint is not resolved on time? <span class="faq-icon">▼</span></div>
+                     <div class="faq-a">If a complaint crosses its SLA deadline, it is automatically escalated to a senior officer and admin is notified. You will see the status change on the tracking page.</div>
+                  </div>
+                  <div class="faq-item" onclick="this.classList.toggle('open')">
+                     <div class="faq-q">Can I file a complaint without registering? <span class="faq-icon">▼</span></div>
+                     <div class="faq-a">No, you need to register once to file a complaint. However, you can track any complaint using just the Complaint ID without logging in.</div>
+                  </div>
+                  <div class="faq-item" onclick="this.classList.toggle('open')">
+                     <div class="faq-q">What is AI department auto-detection? <span class="faq-icon">▼</span></div>
+                     <div class="faq-a">When you select "Auto Detect (AI)" in the department field, our AI reads your complaint text and assigns it to the most appropriate department automatically.</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/sidebar.js"></script>
+   </body>
+</html>

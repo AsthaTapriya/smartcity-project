@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+      <title>Login - SmartCity</title>
+   </head>
+   <body>
+      <video autoplay muted loop class="bg-video">
+         <source src="video.mp4" type="video/mp4">
+      </video>
+      <!-- <div class="bg-overlay"></div> -->
+      <div class="auth-layout">
+         <div class="auth-sidebar">
+            <div class="s-logo">
+               <div class="s-logo-icon">🏛️</div>
+               <div class="s-logo-text">Smart<span>City</span></div>
+            </div>
+            <div class="s-section">Public</div>
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span>Home</a>
+            <a href="login.html" class="nav-item active"><span class="nav-icon">🔑</span>Login</a>
+            <a href="register.html" class="nav-item"><span class="nav-icon">📝</span>Register</a>
+            <a href="file-complaint.html" class="nav-item"><span class="nav-icon">📋</span>File Complaint</a>
+            <a href="track-complaint.html" class="nav-item"><span class="nav-icon">📍</span>Track Complaint</a>
+            <a href="faq.html" class="nav-item"><span class="nav-icon">❓</span>FAQ &amp; Help</a>
+            <a href="announcements.html" class="nav-item"><span class="nav-icon">📢</span>Announcements</a>
+            <div class="s-section">Citizen</div>
+            <a href="my-complaints.html" class="nav-item"><span class="nav-icon">📋</span>My Complaints</a>
+            <div class="s-section">Officer</div>
+            <a href="officer-complaints.html" class="nav-item"><span class="nav-icon">👷</span>Assigned Complaints</a>
+            <a href="sla-tracker.html" class="nav-item"><span class="nav-icon">⏱️</span>SLA Tracker</a>
+            <div class="s-section">Admin</div>
+            <a href="admin-dashboard.html" class="nav-item"><span class="nav-icon">📊</span>Admin Dashboard</a>
+            <a href="user-management.html" class="nav-item"><span class="nav-icon">👥</span>User Management</a>
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙️</span>Settings</a>
+         </div>
+         <div class="auth-main">
+            <div class="auth-box">
+               <div class="auth-video-side">
+                  <video autoplay muted loop>
+                     <source src="video2.mp4" type="video/mp4">
+                  </video>
+                  <div class="auth-video-overlay">
+                     <div class="auth-video-title">SmartCity Complaint &amp; Grievance Portal</div>
+                     <div class="auth-video-sub">Empowering citizens. Improving cities.</div>
+                  </div>
+               </div>
+               <div class="auth-form-side">
+                  <div class="auth-form-title">Welcome Back 👋</div>
+                  <div class="auth-form-sub">Log in to report issues and track complaint status in real-time.</div>
+                  <div class="form-row"><label>Email Address</label><input type="email" id="loginEmail" placeholder="xyz@gmail.com"></div>
+                  <div class="form-row"><label>Password</label><input type="password" id="loginPwd" placeholder="••••••••"></div>
+                  <div class="form-row">
+                     <label>Login As</label>
+                     <select id="loginRole">
+                        <option value="citizen">👨‍💼 Citizen</option>
+                        <option value="officer">👷 Department Officer</option>
+                        <option value="admin">🛡️ Admin</option>
+                     </select>
+                  </div>
+                  <button type="button" id="loginBtn" class="form-submit">Login</button>
+                  <p style="text-align:center;margin-top:12px;font-size:11px;color:var(--gray)">Don't have an account? <a href="register.html" style="color:var(--blue2);text-decoration:none">Register here</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/login.js"></script>
+   </body>
+</html>

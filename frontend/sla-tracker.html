@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+      <title>SLA Tracker - SmartCity</title>
+   </head>
+   <body>
+      <video autoplay muted loop class="bg-video">
+         <source src="video.mp4" type="video/mp4">
+      </video>
+      <!-- <div class="bg-overlay"></div> -->
+      <div class="layout">
+         <div class="sidebar">
+            <div class="s-logo">
+               <div class="s-logo-icon">🏛️</div>
+               <div class="s-logo-text">Smart<span>City</span></div>
+            </div>
+            <div class="s-section">Public</div>
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span>Home</a>
+            <a href="login.html" class="nav-item"><span class="nav-icon">🔑</span>Login</a>
+            <a href="register.html" class="nav-item"><span class="nav-icon">📝</span>Register</a>
+            <a href="file-complaint.html" class="nav-item"><span class="nav-icon">📋</span>File Complaint</a>
+            <a href="track-complaint.html" class="nav-item"><span class="nav-icon">📍</span>Track Complaint</a>
+            <a href="faq.html" class="nav-item"><span class="nav-icon">❓</span>FAQ &amp; Help</a>
+            <a href="announcements.html" class="nav-item"><span class="nav-icon">📢</span>Announcements</a>
+            <div class="s-section">Citizen</div>
+            <a href="my-complaints.html" class="nav-item"><span class="nav-icon">📋</span>My Complaints</a>
+            <div class="s-section">Officer</div>
+            <a href="officer-complaints.html" class="nav-item"><span class="nav-icon">👷</span>Assigned Complaints</a>
+            <a href="sla-tracker.html" class="nav-item active"><span class="nav-icon">⏱️</span>SLA Tracker</a>
+            <div class="s-section">Admin</div>
+            <a href="admin-dashboard.html" class="nav-item"><span class="nav-icon">📊</span>Admin Dashboard</a>
+            <a href="user-management.html" class="nav-item"><span class="nav-icon">👥</span>User Management</a>
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙️</span>Settings</a>
+            <div class="s-footer">
+               <div class="user-pill">
+                  <div class="user-av" id="sidebarAvatar">?</div>
+                  <div>
+                     <div class="user-nm" id="sidebarName">Officer</div>
+                     <div class="user-rl" id="sidebarRole">Department Officer</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="main-content">
+            <div class="topbar">
+               <div class="topbar-title">⏱️ SLA Tracker</div>
+               <div class="topbar-right">Ajmer Municipal Corporation</div>
+            </div>
+            <div class="page-content">
+               <div class="page-heading">⏱️ SLA Tracker — Deadline Monitor</div>
+               <div class="page-sub">🟢 On time &nbsp;·&nbsp; 🟡 Urgent &nbsp;·&nbsp; 🔴 Overdue &amp; escalated</div>
+               <div class="card" style="background:rgba(245,101,101,0.05);border-color:rgba(245,101,101,0.2);margin-bottom:14px;padding:12px 16px">
+                  <span style="font-size:11px;font-weight:600;color:var(--red)">🔴 Auto Escalation: </span>
+                  <span style="font-size:11px;color:var(--gray)">Complaints crossing their SLA deadline are automatically escalated.</span>
+               </div>
+               <div class="table-wrap">
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>ID</th>
+                           <th>Title &amp; Progress</th>
+                           <th>Deadline</th>
+                           <th>Status</th>
+                        </tr>
+                     </thead>
+                     <tbody id="slaBody"></tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/sidebar.js"></script>
+      <script src="js/sla-tracker.js"></script>
+   </body>
+</html>

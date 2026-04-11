@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+      <title>Assigned Complaints - SmartCity</title>
+   </head>
+   <body>
+      <video autoplay muted loop class="bg-video">
+         <source src="video.mp4" type="video/mp4">
+      </video>
+      <!-- <div class="bg-overlay"></div> -->
+      <div class="layout">
+         <div class="sidebar">
+            <div class="s-logo">
+               <div class="s-logo-icon">🏛️</div>
+               <div class="s-logo-text">Smart<span>City</span></div>
+            </div>
+            <div class="s-section">Public</div>
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span>Home</a>
+            <a href="login.html" class="nav-item"><span class="nav-icon">🔑</span>Login</a>
+            <a href="register.html" class="nav-item"><span class="nav-icon">📝</span>Register</a>
+            <a href="file-complaint.html" class="nav-item"><span class="nav-icon">📋</span>File Complaint</a>
+            <a href="track-complaint.html" class="nav-item"><span class="nav-icon">📍</span>Track Complaint</a>
+            <a href="faq.html" class="nav-item"><span class="nav-icon">❓</span>FAQ &amp; Help</a>
+            <a href="announcements.html" class="nav-item"><span class="nav-icon">📢</span>Announcements</a>
+            <div class="s-section">Citizen</div>
+            <a href="my-complaints.html" class="nav-item"><span class="nav-icon">📋</span>My Complaints</a>
+            <div class="s-section">Officer</div>
+            <a href="officer-complaints.html" class="nav-item active"><span class="nav-icon">👷</span>Assigned Complaints</a>
+            <a href="sla-tracker.html" class="nav-item"><span class="nav-icon">⏱️</span>SLA Tracker</a>
+            <div class="s-section">Admin</div>
+            <a href="admin-dashboard.html" class="nav-item"><span class="nav-icon">📊</span>Admin Dashboard</a>
+            <a href="user-management.html" class="nav-item"><span class="nav-icon">👥</span>User Management</a>
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙️</span>Settings</a>
+            <div class="s-footer">
+               <div class="user-pill">
+                  <div class="user-av" id="sidebarAvatar">?</div>
+                  <div>
+                     <div class="user-nm" id="sidebarName">Officer</div>
+                     <div class="user-rl" id="sidebarRole">Department Officer</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="main-content">
+            <div class="topbar">
+               <div class="topbar-title">👷 Assigned Complaints</div>
+               <div class="topbar-right">Ajmer Municipal Corporation</div>
+            </div>
+            <div class="page-content">
+               <div class="page-heading">👷 Assigned Complaints — <span id="officerName" style="color:var(--teal)">Loading...</span></div>
+               <div class="page-sub">Manage and update the status of complaints assigned to you.</div>
+               <div class="table-wrap">
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>ID</th>
+                           <th>Title</th>
+                           <th>Citizen</th>
+                           <th>Priority</th>
+                           <th>Deadline</th>
+                           <th>Status</th>
+                           <th>Action</th>
+                        </tr>
+                     </thead>
+                     <tbody id="officerBody"></tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/sidebar.js"></script>
+      <script src="js/officer-complaints.js"></script>
+   </body>
+</html>

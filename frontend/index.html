@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+      <title>SmartCity Portal</title>
+   </head>
+   <body>
+      <video autoplay muted loop class="bg-video">
+         <source src="video.mp4" type="video/mp4">
+      </video>
+      <!-- <div class="bg-overlay"></div> -->
+      <div class="home-layout">
+         <div class="home-sidebar">
+            <div class="s-logo">
+               <div class="s-logo-icon">🏛️</div>
+               <div class="s-logo-text">Smart<span>City</span></div>
+            </div>
+            <div class="s-section">Public</div>
+            <a href="index.html" class="nav-item active"><span class="nav-icon">🏠</span>Home</a>
+            <a href="login.html" class="nav-item"><span class="nav-icon">🔑</span>Login</a>
+            <a href="register.html" class="nav-item"><span class="nav-icon">📝</span>Register</a>
+            <a href="file-complaint.html" class="nav-item"><span class="nav-icon">📋</span>File Complaint</a>
+            <a href="track-complaint.html" class="nav-item"><span class="nav-icon">📍</span>Track Complaint</a>
+            <a href="faq.html" class="nav-item"><span class="nav-icon">❓</span>FAQ &amp; Help</a>
+            <a href="announcements.html" class="nav-item"><span class="nav-icon">📢</span>Announcements</a>
+            <div class="s-section">Citizen</div>
+            <a href="my-complaints.html" class="nav-item"><span class="nav-icon">📋</span>My Complaints</a>
+            <div class="s-section">Officer</div>
+            <a href="officer-complaints.html" class="nav-item"><span class="nav-icon">👷</span>Assigned Complaints</a>
+            <a href="sla-tracker.html" class="nav-item"><span class="nav-icon">⏱️</span>SLA Tracker</a>
+            <div class="s-section">Admin</div>
+            <a href="admin-dashboard.html" class="nav-item"><span class="nav-icon">📊</span>Admin Dashboard</a>
+            <a href="user-management.html" class="nav-item"><span class="nav-icon">👥</span>User Management</a>
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙️</span>Settings</a>
+            <div class="s-footer">
+               <div class="user-pill">
+                  <div class="user-av" id="sidebarAvatar">?</div>
+                  <div>
+                     <div class="user-nm" id="sidebarName">Guest</div>
+                     <div class="user-rl" id="sidebarRole">Not logged in</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="home-main">
+            <div class="home-topbar">
+               <div style="font-size:14px;font-weight:600">🏠 Home</div>
+               <div style="font-size:11px;color:var(--gray)">Ajmer Municipal Corporation</div>
+            </div>
+            <div class="hero">
+               <div class="hero-badge">
+                  <div class="hero-dot"></div>
+                  Live — Ajmer Municipal Corporation
+               </div>
+               <h1 class="hero-title">Your City. Your Voice.<br><span>Resolved Fast.</span></h1>
+               <p class="hero-sub">File civic complaints, track progress in real time, and hold your city accountable.</p>
+               <div class="hero-btns">
+                  <a href="file-complaint.html" class="hero-btn primary">📋 File a Complaint</a>
+                  <a href="track-complaint.html" class="hero-btn secondary">📍 Track Status</a>
+               </div>
+            </div>
+            <div class="stats-row">
+               <div class="stat-item">
+                  <div class="num" id="totalComplaints">0<span>+</span></div>
+                  <div class="lbl">Complaints Filed</div>
+               </div>
+               <div class="stat-item">
+                  <div class="num" id="resolvedComplaints">0<span>+</span></div>
+                  <div class="lbl">Resolved</div>
+               </div>
+               <div class="stat-item">
+                  <div class="num" id="totalDepts">0</div>
+                  <div class="lbl">Departments</div>
+               </div>
+               <div class="stat-item">
+                  <div class="num">98<span>%</span></div>
+                  <div class="lbl">Satisfaction Rate</div>
+               </div>
+            </div>
+            <div class="features-section">
+               <div class="section-title">Key Features</div>
+               <div class="features-grid">
+                  <div class="feat-card">
+                     <div class="feat-icon">📋</div>
+                     <div class="feat-title">Easy Filing</div>
+                     <div class="feat-desc">File complaints with photo &amp; location in under 2 minutes.</div>
+                  </div>
+                  <div class="feat-card">
+                     <div class="feat-icon">📍</div>
+                     <div class="feat-title">Live Tracking</div>
+                     <div class="feat-desc">Track complaint status step by step in real time.</div>
+                  </div>
+                  <div class="feat-card">
+                     <div class="feat-icon">🤖</div>
+                     <div class="feat-title">AI Assignment</div>
+                     <div class="feat-desc">AI auto-assigns complaint to the correct department instantly.</div>
+                  </div>
+                  <div class="feat-card">
+                     <div class="feat-icon">⏱️</div>
+                     <div class="feat-title">SLA Deadlines</div>
+                     <div class="feat-desc">Every complaint has a fixed resolution deadline.</div>
+                  </div>
+                  <div class="feat-card">
+                     <div class="feat-icon">🔔</div>
+                     <div class="feat-title">Notifications</div>
+                     <div class="feat-desc">Get notified on every status change automatically.</div>
+                  </div>
+                  <div class="feat-card">
+                     <div class="feat-icon">⭐</div>
+                     <div class="feat-title">Feedback</div>
+                     <div class="feat-desc">Rate resolution quality after your complaint closes.</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/sidebar.js"></script>
+      <script src="js/index.js"></script>
+   </body>
+</html>

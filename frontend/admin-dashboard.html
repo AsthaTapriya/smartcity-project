@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+      <title>Admin Dashboard - SmartCity</title>
+   </head>
+   <body>
+      <video autoplay muted loop class="bg-video">
+         <source src="video.mp4" type="video/mp4">
+      </video>
+      <!-- <div class="bg-overlay"></div> -->
+      <div class="layout">
+         <div class="sidebar">
+            <div class="s-logo">
+               <div class="s-logo-icon">🏛️</div>
+               <div class="s-logo-text">Smart<span>City</span></div>
+            </div>
+            <div class="s-section">Public</div>
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span>Home</a>
+            <a href="login.html" class="nav-item"><span class="nav-icon">🔑</span>Login</a>
+            <a href="register.html" class="nav-item"><span class="nav-icon">📝</span>Register</a>
+            <a href="file-complaint.html" class="nav-item"><span class="nav-icon">📋</span>File Complaint</a>
+            <a href="track-complaint.html" class="nav-item"><span class="nav-icon">📍</span>Track Complaint</a>
+            <a href="faq.html" class="nav-item"><span class="nav-icon">❓</span>FAQ &amp; Help</a>
+            <a href="announcements.html" class="nav-item"><span class="nav-icon">📢</span>Announcements</a>
+            <div class="s-section">Citizen</div>
+            <a href="my-complaints.html" class="nav-item"><span class="nav-icon">📋</span>My Complaints</a>
+            <div class="s-section">Officer</div>
+            <a href="officer-complaints.html" class="nav-item"><span class="nav-icon">👷</span>Assigned Complaints</a>
+            <a href="sla-tracker.html" class="nav-item"><span class="nav-icon">⏱️</span>SLA Tracker</a>
+            <div class="s-section">Admin</div>
+            <a href="admin-dashboard.html" class="nav-item active"><span class="nav-icon">📊</span>Admin Dashboard</a>
+            <a href="user-management.html" class="nav-item"><span class="nav-icon">👥</span>User Management</a>
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙️</span>Settings</a>
+            <div class="s-footer">
+               <div class="user-pill">
+                  <div class="user-av" id="sidebarAvatar">A</div>
+                  <div>
+                     <div class="user-nm" id="sidebarName">Admin</div>
+                     <div class="user-rl" id="sidebarRole">Super Admin</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="main-content">
+            <div class="topbar">
+               <div class="topbar-title">📊 Admin Dashboard</div>
+               <div style="display:flex;align-items:center;gap:12px">
+                  <div class="notif-btn">
+                     🔔
+                     <div class="notif-dot"></div>
+                  </div>
+                  <div class="topbar-right">Ajmer Municipal Corporation</div>
+               </div>
+            </div>
+            <div class="page-content">
+               <div class="stat-grid">
+                  <div class="stat-card">
+                     <span class="stat-num" id="statTotal" style="color:var(--blue2)">0</span>
+                     <div class="stat-lbl">Total Complaints</div>
+                  </div>
+                  <div class="stat-card">
+                     <span class="stat-num" id="statResolved" style="color:var(--teal)">0</span>
+                     <div class="stat-lbl">Resolved</div>
+                  </div>
+                  <div class="stat-card">
+                     <span class="stat-num" id="statProgress" style="color:var(--gold)">0</span>
+                     <div class="stat-lbl">In Progress</div>
+                  </div>
+                  <div class="stat-card">
+                     <span class="stat-num" id="statPending" style="color:var(--red)">0</span>
+                     <div class="stat-lbl">Pending</div>
+                  </div>
+               </div>
+               <div class="charts-row">
+                  <div class="chart-box">
+                     <h3>Complaints by Department</h3>
+                     <canvas id="deptChart"></canvas>
+                  </div>
+                  <div class="chart-box">
+                     <h3>Resolution Overview</h3>
+                     <div class="progress-item">
+                        <div class="progress-label"><span>Resolved</span><span id="resolvedPercent">0%</span></div>
+                        <div class="progress-bar">
+                           <div class="progress-fill resolved" id="resolvedBar" style="width:0%"></div>
+                        </div>
+                     </div>
+                     <div class="progress-item">
+                        <div class="progress-label"><span>In Progress</span><span id="progressPercent">0%</span></div>
+                        <div class="progress-bar">
+                           <div class="progress-fill inprogress" id="progressBar" style="width:0%"></div>
+                        </div>
+                     </div>
+                     <div class="progress-item">
+                        <div class="progress-label"><span>Pending</span><span id="pendingPercent">0%</span></div>
+                        <div class="progress-bar">
+                           <div class="progress-fill pending" id="pendingBar" style="width:0%"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div style="font-size:14px;font-weight:600;margin-bottom:12px">Recent Complaints</div>
+               <div class="table-wrap">
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>ID</th>
+                           <th>Title</th>
+                           <th>Citizen</th>
+                           <th>Department</th>
+                           <th>Officer</th>
+                           <th>Priority</th>
+                           <th>Status</th>
+                           <th>Action</th>
+                        </tr>
+                     </thead>
+                     <tbody id="adminBody"></tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="js/sidebar.js"></script>
+      <script src="js/admin-dashboard.js"></script>
+   </body>
+</html>

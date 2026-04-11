@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+      <title>Settings - SmartCity</title>
+   </head>
+   <body>
+      <video autoplay muted loop class="bg-video">
+         <source src="video.mp4" type="video/mp4">
+      </video>
+      <!-- <div class="bg-overlay"></div> -->
+      <div class="layout">
+         <div class="sidebar">
+            <div class="s-logo">
+               <div class="s-logo-icon">🏛️</div>
+               <div class="s-logo-text">Smart<span>City</span></div>
+            </div>
+            <div class="s-section">Public</div>
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span>Home</a>
+            <a href="login.html" class="nav-item"><span class="nav-icon">🔑</span>Login</a>
+            <a href="register.html" class="nav-item"><span class="nav-icon">📝</span>Register</a>
+            <a href="file-complaint.html" class="nav-item"><span class="nav-icon">📋</span>File Complaint</a>
+            <a href="track-complaint.html" class="nav-item"><span class="nav-icon">📍</span>Track Complaint</a>
+            <a href="faq.html" class="nav-item"><span class="nav-icon">❓</span>FAQ &amp; Help</a>
+            <a href="announcements.html" class="nav-item"><span class="nav-icon">📢</span>Announcements</a>
+            <div class="s-section">Citizen</div>
+            <a href="my-complaints.html" class="nav-item"><span class="nav-icon">📋</span>My Complaints</a>
+            <div class="s-section">Officer</div>
+            <a href="officer-complaints.html" class="nav-item"><span class="nav-icon">👷</span>Assigned Complaints</a>
+            <a href="sla-tracker.html" class="nav-item"><span class="nav-icon">⏱️</span>SLA Tracker</a>
+            <div class="s-section">Admin</div>
+            <a href="admin-dashboard.html" class="nav-item"><span class="nav-icon">📊</span>Admin Dashboard</a>
+            <a href="user-management.html" class="nav-item"><span class="nav-icon">👥</span>User Management</a>
+            <a href="settings.html" class="nav-item active"><span class="nav-icon">⚙️</span>Settings</a>
+            <div class="s-footer">
+               <div class="user-pill">
+                  <div class="user-av" id="sidebarAvatar">A</div>
+                  <div>
+                     <div class="user-nm" id="sidebarName">Admin</div>
+                     <div class="user-rl" id="sidebarRole">Super Admin</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="main-content">
+            <div class="topbar">
+               <div class="topbar-title">⚙️ Settings</div>
+               <div class="topbar-right">Ajmer Municipal Corporation</div>
+            </div>
+            <div class="page-content">
+               <div class="page-heading">⚙️ System Settings</div>
+               <div class="page-sub">Configure system preferences and SLA deadlines.</div>
+               <div class="settings-wrap">
+                  <div class="card">
+                     <div class="settings-section-title">General</div>
+                     <div class="setting-row">
+                        <div>
+                           <div class="setting-label">Email Notifications</div>
+                           <div class="setting-desc">Send email to citizen on every status update</div>
+                        </div>
+                        <div class="toggle active" onclick="toggleSetting(this)"></div>
+                     </div>
+                     <div class="setting-row">
+                        <div>
+                           <div class="setting-label">Auto Department Assignment (AI)</div>
+                           <div class="setting-desc">Let AI assign complaints to departments automatically</div>
+                        </div>
+                        <div class="toggle active" onclick="toggleSetting(this)"></div>
+                     </div>
+                     <div class="setting-row">
+                        <div>
+                           <div class="setting-label">Auto Escalation</div>
+                           <div class="setting-desc">Escalate complaints that cross SLA deadline</div>
+                        </div>
+                        <div class="toggle active" onclick="toggleSetting(this)"></div>
+                     </div>
+                  </div>
+                  <div class="card">
+                     <div class="settings-section-title">SLA Deadlines (in days)</div>
+                     <div class="sla-grid">
+                        <div class="form-row"><label>Roads &amp; Infrastructure</label><input type="number" id="roads_sla" value="7"></div>
+                        <div class="form-row"><label>Water Supply</label><input type="number" id="water_sla" value="3"></div>
+                        <div class="form-row"><label>Electricity</label><input type="number" id="electricity_sla" value="2"></div>
+                        <div class="form-row"><label>Sanitation &amp; Waste</label><input type="number" id="sanitation_sla" value="4"></div>
+                     </div>
+                     <button type="button" id="saveSlaBtn" class="btn btn-primary">Save SLA Settings</button>
+                  </div>
+                  <div class="card">
+                     <div class="settings-section-title">Portal Info</div>
+                     <div class="form-row"><label>Portal Name</label><input type="text" id="portalName" value="Smart City Complaint Portal"></div>
+                     <div class="form-row"><label>City / Municipality</label><input type="text" id="cityName" value="Ajmer Municipal Corporation"></div>
+                     <div class="form-row"><label>Contact Email</label><input type="email" id="contactEmail" value="support@ajmercorp.gov.in"></div>
+                     <button type="button" id="saveSettingsBtn" class="btn btn-primary" style="margin-top:4px">Save Settings</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/sidebar.js"></script>
+      <script src="js/settings.js"></script>
+   </body>
+</html>

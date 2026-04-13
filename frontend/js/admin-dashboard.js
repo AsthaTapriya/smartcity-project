@@ -109,17 +109,34 @@ function renderTable(data) {
 }
 
 function assignComplaint(compId) {
-    const officerId = prompt('Enter Officer ID to assign this complaint:');
-    if (!officerId || isNaN(officerId)) return;
+
+    const message = "Enter Officer ID to assign this complaint:\n\n" +
+    "Roads and Infrastructure: 2\n" +
+    "Electricity: 3\n" +
+    "Traffic Management: 4\n" +
+    "Water Supply: 8\n" +
+    "Parks & Gardens: 9\n" +
+    "Sanitation and Waste: 10\n";
+
+    const input = prompt(message);
+
+    // ❗ handle cancel / empty
+    if (input === null || input.trim() === "") return;
+
+    const officerId = Number(input);
+
+    // ❗ ensure valid number
+    if (isNaN(officerId)) return;
 
     const adminId = localStorage.getItem('userId');
 
     fetch(`${BASE_URL}/api/complaints/${compId}`)
         .then(res => res.json())
         .then(complaint => {
-            // assignedOfficer and compStatus are correct field names
-            complaint.assignedOfficer = { id: parseInt(officerId) };
-            complaint.compStatus      = 'assigned';
+            // ✅ ensure correct numeric ID
+            complaint.assignedOfficer = { id: officerId };
+            complaint.compStatus = 'assigned';
+
             return fetch(`${BASE_URL}/api/complaints/update`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
@@ -127,16 +144,15 @@ function assignComplaint(compId) {
             });
         })
         .then(() => {
-            // Add history record
             return fetch(`${BASE_URL}/api/history/add`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    complaint:  { compId: compId },
+                    complaint: { compId: compId },
                     old_status: 'filed',
                     new_status: 'assigned',
-                    changedBy:  { id: parseInt(adminId) },
-                    remark:     'Assigned to officer by admin'
+                    changedBy: { id: parseInt(adminId) },
+                    remark: 'Assigned to officer by admin'
                 })
             });
         })
@@ -146,6 +162,45 @@ function assignComplaint(compId) {
         })
         .catch(() => alert('❌ Failed! Make sure Officer ID is correct.'));
 }
+
+// function assignComplaint(compId) {
+//     const officerId = prompt('Enter Officer ID to assign this complaint:');
+//     if (!officerId || isNaN(officerId)) return;
+
+//     const adminId = localStorage.getItem('userId');
+
+//     fetch(`${BASE_URL}/api/complaints/${compId}`)
+//         .then(res => res.json())
+//         .then(complaint => {
+//             // assignedOfficer and compStatus are correct field names
+//             complaint.assignedOfficer = { id: parseInt(officerId) };
+//             complaint.compStatus      = 'assigned';
+//             return fetch(`${BASE_URL}/api/complaints/update`, {
+//                 method: 'PUT',
+//                 headers: { 'Content-Type': 'application/json' },
+//                 body: JSON.stringify(complaint)
+//             });
+//         })
+//         .then(() => {
+//             // Add history record
+//             return fetch(`${BASE_URL}/api/history/add`, {
+//                 method: 'POST',
+//                 headers: { 'Content-Type': 'application/json' },
+//                 body: JSON.stringify({
+//                     complaint:  { compId: compId },
+//                     old_status: 'filed',
+//                     new_status: 'assigned',
+//                     changedBy:  { id: parseInt(adminId) },
+//                     remark:     'Assigned to officer by admin'
+//                 })
+//             });
+//         })
+//         .then(() => {
+//             alert('✅ Complaint assigned successfully!');
+//             loadDashboard();
+//         })
+//         .catch(() => alert('❌ Failed! Make sure Officer ID is correct.'));
+// }
 // function assignComplaint(compId) {
 //     // First fetch all officers to show dropdown
 //     fetch(`${BASE_URL}/api/officers/all`)

@@ -108,103 +108,103 @@ function renderTable(data) {
     });
 }
 
-// function assignComplaint(compId) {
-//     const officerId = prompt('Enter Officer ID to assign this complaint:');
-//     if (!officerId || isNaN(officerId)) return;
-
-//     const adminId = localStorage.getItem('userId');
-
-//     fetch(`${BASE_URL}/api/complaints/${compId}`)
-//         .then(res => res.json())
-//         .then(complaint => {
-//             // assignedOfficer and compStatus are correct field names
-//             complaint.assignedOfficer = { id: parseInt(officerId) };
-//             complaint.compStatus      = 'assigned';
-//             return fetch(`${BASE_URL}/api/complaints/update`, {
-//                 method: 'PUT',
-//                 headers: { 'Content-Type': 'application/json' },
-//                 body: JSON.stringify(complaint)
-//             });
-//         })
-//         .then(() => {
-//             // Add history record
-//             return fetch(`${BASE_URL}/api/history/add`, {
-//                 method: 'POST',
-//                 headers: { 'Content-Type': 'application/json' },
-//                 body: JSON.stringify({
-//                     complaint:  { compId: compId },
-//                     old_status: 'filed',
-//                     new_status: 'assigned',
-//                     changedBy:  { id: parseInt(adminId) },
-//                     remark:     'Assigned to officer by admin'
-//                 })
-//             });
-//         })
-//         .then(() => {
-//             alert('✅ Complaint assigned successfully!');
-//             loadDashboard();
-//         })
-//         .catch(() => alert('❌ Failed! Make sure Officer ID is correct.'));
-// }
 function assignComplaint(compId) {
-    // First fetch all officers to show dropdown
-    fetch(`${BASE_URL}/api/officers/all`)
+    const officerId = prompt('Enter Officer ID to assign this complaint:');
+    if (!officerId || isNaN(officerId)) return;
+
+    const adminId = localStorage.getItem('userId');
+
+    fetch(`${BASE_URL}/api/complaints/${compId}`)
         .then(res => res.json())
-        .then(officers => {
-            if (officers.length === 0) {
-                alert('❌ No officers found! Register officers first.');
-                return;
-            }
-
-            // Build a readable list for admin to choose from
-            let message = 'Select Officer (enter number):\n\n';
-            officers.forEach((o, index) => {
-                const name = o.user ? o.user.user_name : 'Unknown';
-                const dept = o.department ? o.department.dept_name : 'No dept';
-                message += `${index + 1}. ${name} — ${dept} (ID: ${o.id})\n`;
+        .then(complaint => {
+            // assignedOfficer and compStatus are correct field names
+            complaint.assignedOfficer = { id: parseInt(officerId) };
+            complaint.compStatus      = 'assigned';
+            return fetch(`${BASE_URL}/api/complaints/update`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(complaint)
             });
-
-            const choice = prompt(message);
-            if (!choice || isNaN(choice)) return;
-
-            const selectedIndex = parseInt(choice) - 1;
-            if (selectedIndex < 0 || selectedIndex >= officers.length) {
-                alert('❌ Invalid selection!');
-                return;
-            }
-
-            const selectedOfficer = officers[selectedIndex];
-            const adminId = localStorage.getItem('userId');
-
-            fetch(`${BASE_URL}/api/complaints/${compId}`)
-                .then(res => res.json())
-                .then(complaint => {
-                    complaint.assignedOfficer = { id: selectedOfficer.id };
-                    complaint.compStatus = 'assigned';
-                    return fetch(`${BASE_URL}/api/complaints/update`, {
-                        method: 'PUT',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(complaint)
-                    });
-                })
-                .then(() => {
-                    return fetch(`${BASE_URL}/api/history/add`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            complaint:  { compId: compId },
-                            old_status: 'filed',
-                            new_status: 'assigned',
-                            changedBy:  { id: parseInt(adminId) },
-                            remark:     'Assigned to officer ' + selectedOfficer.user.user_name + ' by admin'
-                        })
-                    });
-                })
-                .then(() => {
-                    alert('✅ Assigned to ' + selectedOfficer.user.user_name + ' successfully!');
-                    loadDashboard();
-                })
-                .catch(() => alert('❌ Failed to assign!'));
         })
-        .catch(() => alert('❌ Could not load officers!'));
+        .then(() => {
+            // Add history record
+            return fetch(`${BASE_URL}/api/history/add`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    complaint:  { compId: compId },
+                    old_status: 'filed',
+                    new_status: 'assigned',
+                    changedBy:  { id: parseInt(adminId) },
+                    remark:     'Assigned to officer by admin'
+                })
+            });
+        })
+        .then(() => {
+            alert('✅ Complaint assigned successfully!');
+            loadDashboard();
+        })
+        .catch(() => alert('❌ Failed! Make sure Officer ID is correct.'));
 }
+// function assignComplaint(compId) {
+//     // First fetch all officers to show dropdown
+//     fetch(`${BASE_URL}/api/officers/all`)
+//         .then(res => res.json())
+//         .then(officers => {
+//             if (officers.length === 0) {
+//                 alert('❌ No officers found! Register officers first.');
+//                 return;
+//             }
+
+//             // Build a readable list for admin to choose from
+//             let message = 'Select Officer (enter number):\n\n';
+//             officers.forEach((o, index) => {
+//                 const name = o.user ? o.user.user_name : 'Unknown';
+//                 const dept = o.department ? o.department.dept_name : 'No dept';
+//                 message += `${index + 1}. ${name} — ${dept} (ID: ${o.id})\n`;
+//             });
+
+//             const choice = prompt(message);
+//             if (!choice || isNaN(choice)) return;
+
+//             const selectedIndex = parseInt(choice) - 1;
+//             if (selectedIndex < 0 || selectedIndex >= officers.length) {
+//                 alert('❌ Invalid selection!');
+//                 return;
+//             }
+
+//             const selectedOfficer = officers[selectedIndex];
+//             const adminId = localStorage.getItem('userId');
+
+//             fetch(`${BASE_URL}/api/complaints/${compId}`)
+//                 .then(res => res.json())
+//                 .then(complaint => {
+//                     complaint.assignedOfficer = { id: selectedOfficer.id };
+//                     complaint.compStatus = 'assigned';
+//                     return fetch(`${BASE_URL}/api/complaints/update`, {
+//                         method: 'PUT',
+//                         headers: { 'Content-Type': 'application/json' },
+//                         body: JSON.stringify(complaint)
+//                     });
+//                 })
+//                 .then(() => {
+//                     return fetch(`${BASE_URL}/api/history/add`, {
+//                         method: 'POST',
+//                         headers: { 'Content-Type': 'application/json' },
+//                         body: JSON.stringify({
+//                             complaint:  { compId: compId },
+//                             old_status: 'filed',
+//                             new_status: 'assigned',
+//                             changedBy:  { id: parseInt(adminId) },
+//                             remark:     'Assigned to officer ' + selectedOfficer.user.user_name + ' by admin'
+//                         })
+//                     });
+//                 })
+//                 .then(() => {
+//                     alert('✅ Assigned to ' + selectedOfficer.user.user_name + ' successfully!');
+//                     loadDashboard();
+//                 })
+//                 .catch(() => alert('❌ Failed to assign!'));
+//         })
+//         .catch(() => alert('❌ Could not load officers!'));
+// }

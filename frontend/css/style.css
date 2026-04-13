@@ -58,7 +58,8 @@ body {
 
 .sidebar {
 	width: var(--sw);
-    background: #0f0f1a;
+    background: linear-gradient(80deg, #220029, #1b0029);
+    box-shadow: 0 0 0 3px rgba(30, 49, 75, 0.25);
 	border-right: 1px solid var(--border);
 	position: fixed;
 	top: 0;

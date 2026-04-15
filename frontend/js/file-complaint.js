@@ -21,12 +21,18 @@ function loadDepartments() {
 
 document.getElementById('complaintBtn').addEventListener('click', function () {
     const userId = localStorage.getItem('userId');
+    const ui_name = document.getElementById('fc_name').value.trim();
+    const userName = localStorage.getItem('userName');
     if (!userId) {
         alert('❌ Please login first to file a complaint!');
         window.location.href = 'login.html';
         return;
     }
-
+    else if(ui_name !== userName){
+        alert('You are not a logged in person. Login with your email');
+        // window.location.href = 'login.html';
+        return;
+    }
     const title    = document.getElementById('fc_title').value.trim();
     const message  = document.getElementById('fc_message').value.trim();
     const location = document.getElementById('fc_location').value.trim();

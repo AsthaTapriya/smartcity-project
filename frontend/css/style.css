@@ -234,7 +234,8 @@ body {
 }
 
 .card {
-	background: var(--card);
+	/* background: var(--card); */
+	background: rgba(11, 22, 40, 0.516);
 	border: 1px solid var(--border);
 	border-radius: 12px;
 	padding: 20px;
@@ -257,7 +258,8 @@ body {
 }
 
 .stat-card {
-	background: var(--card);
+	/* background: var(--card); */
+	background: rgba(11, 22, 40, 0.516);
 	border: 1px solid var(--border);
 	border-radius: 12px;
 	padding: 16px 18px
@@ -276,7 +278,8 @@ body {
 }
 
 .table-wrap {
-	background: var(--card);
+	/* background: var(--card); */
+	background: rgba(11, 22, 40, 0.516);
 	border: 1px solid var(--border);
 	border-radius: 12px;
 	overflow: hidden;
@@ -559,7 +562,8 @@ tr:hover td {
 }
 
 .chart-box {
-	background: var(--card);
+	/* background: var(--card); */
+	background: rgba(11, 22, 40, 0.388);
 	border: 1px solid var(--border);
 	border-radius: 12px;
 	padding: 18px
@@ -882,7 +886,7 @@ tr:hover td {
 
 .auth-box {
 	display: flex;
-	background: rgba(22, 32, 50, 0.95);
+	background: rgba(11, 22, 40, 0.516);
 	border: 1px solid var(--border);
 	border-radius: 16px;
 	overflow: hidden;
@@ -1150,7 +1154,8 @@ tr:hover td {
 }
 
 .feat-card {
-	background: var(--card);
+	/* background: var(--card); */
+	background: rgba(11, 22, 40, 0.516);
 	border: 1px solid var(--border);
 	border-radius: 11px;
 	padding: 16px;

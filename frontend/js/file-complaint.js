@@ -54,7 +54,7 @@ document.getElementById('complaintBtn').addEventListener('click', function () {
 });
 
 function detectAndSubmit(title, message, location, priority, userId) {
-    fetch('http://localhost:5000/predict-department', {
+    fetch('https://smartcity-ai-0kf4.onrender.com/predict-department', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: title + ' ' + message })

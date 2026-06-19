@@ -70,6 +70,9 @@ function detectAndSubmit(title, message, location, priority, userId) {
 }
 
 function submitComplaint(deptId, title, message, location, priority, userId) {
+     if (!deptId || isNaN(parseInt(deptId))) {
+        deptId = 1;
+    }
     // POST /api/complaints/file
     // Complaint.java fields: user, title, department, message, location, priority
     // Note: compStatus and compCreation are set by the backend automatically

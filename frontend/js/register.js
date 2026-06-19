@@ -1,5 +1,5 @@
 // register.js
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'https://smartcity-backend-e3xt.onrender.com';
 
 document.getElementById('registerBtn').addEventListener('click', function () {
     const user_name = document.getElementById('regName').value.trim();

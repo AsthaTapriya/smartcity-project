@@ -87,7 +87,7 @@ insert into users(user_name, email, user_pwd, phone_no, user_role, is_active)
 values('Admin', 'admin@smartcity.com', 'admin123', '8209904360', 'admin', 1);
 
 select * from users;
-
+select * from departments;
 select * from officers;
 delete from users where id = 2;
 DELETE FROM complaints WHERE comp_user_id = 2;
@@ -97,4 +97,14 @@ select * from complaints;
 DELETE FROM officers WHERE officer_id = 4;
 select * from complaints_history;
 
+SELECT * FROM users WHERE email = 'admin@smartcity.com';
 SHOW TABLES;
+
+SELECT id, email, user_role FROM users WHERE email = 'admin@smartcity.com';
+SELECT COUNT(*) FROM users WHERE email = 'admin@smartcity.com';
+
+SELECT id, email, user_pwd, LENGTH(email) as email_len, LENGTH(user_pwd) as pwd_len FROM users WHERE user_role = 'admin';
+SHOW TABLES;
+
+SELECT COUNT(*) as total_admin_rows FROM users WHERE email = 'admin@smartcity.com';
+SELECT id, email, user_pwd, creation_date FROM users;

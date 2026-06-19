@@ -111,12 +111,12 @@ function renderTable(data) {
 function assignComplaint(compId) {
 
     const message = "Enter Officer ID to assign this complaint:\n\n" +
-    "Roads and Infrastructure: 2\n" +
-    "Electricity: 3\n" +
-    "Traffic Management: 4\n" +
-    "Water Supply: 8\n" +
-    "Parks & Gardens: 9\n" +
-    "Sanitation and Waste: 10\n";
+    "Roads and Infrastructure: 1\n" +
+    "Electricity: 2\n" +
+    "Traffic Management: 3\n" +
+    "Water Supply: 4\n" +
+    "Parks & Gardens: 5\n" +
+    "Sanitation and Waste: 6\n";
 
     const input = prompt(message);
 

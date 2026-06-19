@@ -136,11 +136,11 @@ DEPARTMENT_KEYWORDS = {
 # -------------------------------
 DEPT_ID_MAP = {
     "Roads and Infrastructure": 1,
-    "Water Supply":           4,
-    "Electricity":            5,
-    "Sanitation & Waste":     6,
-    "Parks & Gardens":        7,
-    "Traffic Management":     8
+    "Water Supply":           2,
+    "Electricity":            3,
+    "Sanitation & Waste":     4,
+    "Parks & Gardens":        5,
+    "Traffic Management":     6
 }
 
 # -------------------------------
